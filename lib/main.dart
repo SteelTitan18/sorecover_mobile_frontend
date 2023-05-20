@@ -17,6 +17,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.teal,
+        inputDecorationTheme: InputDecorationTheme(
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+            borderSide: const BorderSide(color: Colors.teal),
+          ),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+            borderSide: const BorderSide(color: Colors.tealAccent),
+          ),
+        ),
       ),
       home: const Authentication(),
     );
