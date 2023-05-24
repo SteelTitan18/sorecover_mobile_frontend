@@ -12,3 +12,13 @@ Future<Map> login(String username, String password) async {
 
   return jsonDecode(response.body);
 }
+
+Future<Map> inscription(Map form) async {
+  var incriptionURI = backendBaseURI.resolve('member/');
+
+  var response = await http.post(incriptionURI, body: form);
+
+  print(response.body);
+
+  return jsonDecode(response.body);
+}

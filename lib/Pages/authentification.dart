@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sorecover/Functions/Backend.dart';
 import 'package:sorecover/Pages/CurrentPage.dart';
+import 'package:sorecover/Pages/subscription.dart';
 
 class Authentication extends StatelessWidget {
   const Authentication({super.key});
@@ -39,13 +40,13 @@ class Authentication extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20), color: Colors.white),
             child: Column(children: [
-              const Text(
+              Container(child: const Text(
                 "Connexion",
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold),
-              ),
+                    fontSize: 28,
+                    fontWeight: FontWeight.w400),
+              )),
               Container(
                 width: 250,
                 margin: const EdgeInsets.all(16),
@@ -116,13 +117,16 @@ class Authentication extends StatelessWidget {
                 margin: const EdgeInsets.all(16),
                 child: InkWell(
                   onTap: () {
-                    print("Coming soon");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Subscription()),
+                    );
                   },
                   child: const Text(
                     "Créer un compte",
                     style: TextStyle(
-                        color: Colors.blue,
-                        decoration: TextDecoration.underline),
+                        color: Colors.blue),
                   ),
                 ),
               )
